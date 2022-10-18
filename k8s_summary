@@ -1,0 +1,16 @@
+Kubernetes是一个容器编排引擎
+
+Kubernetes是master worker的工作模式，master上有apiserver组件，etcd master组件以及scheduler等组件，woker上则是有kubelet组件（负责创建容器通过cri 创建容器, csi 创建storage创建存储相关,cni创建网络相关）, cri 这边是可以是调用docker来实现，也可以是containerd。
+
+Kubenetes存在就是资源管理组件 deployment 无状态的管理组件，管理pod(k8s的最小资源单位),以及replicaset(pod副本数)。
+Pod.yaml 包含version kind metadata 以及spec(包含镜像以及port信息)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80

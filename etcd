@@ -1,5 +1,0 @@
-etcd是kubernetes中是key value型分布式数据库，负责event,pod,deployment等元数据信息，遵循安全协议raft协议，可以实现服务发现等功能
-etcd查看集群成员
-etcdctl member list --write-out=table
-etcdctl --endpoints=localhost:2379 put foo bar
-etcdctl --endpoints=localhost:2379 get foo
